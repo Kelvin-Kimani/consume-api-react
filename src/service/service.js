@@ -1,11 +1,11 @@
 import axios from "axios";
 
-const url = "https://crudcrud.com/api/cd18565f240e44a89715275df76939be"
+const url = "https://crudcrud.com/api/0d26671a3a0c459fbd643890fa3e8811"
 
 class Service{
 
     createUser(user){
-        return axios.post(url, user);
+        return axios.post(url + '/users', user);
     }
 
     getUsers(){
@@ -21,7 +21,7 @@ class Service{
     }
 
     deleteUser(userId){
-        return axios.delete(userId);
+        return axios.delete(url + '/users/' + userId);
     }
 }
 

@@ -4,6 +4,7 @@ import ViewUsers from './ViewUsers';
 import CreateUpdateUser from './CreateUpdateUser';
 import service from './service/service';
 import ViewUser from './ViewUser';
+import UpdateUser from './UpdateUser';
 
 class App extends Component {
 
@@ -22,21 +23,9 @@ class App extends Component {
       })
   }
 
+
+
   render() {
-    const staticUsers = [
-        {
-            name: "John",
-            title: "Developer"
-        },
-        {  
-            name: "Wes",
-            title: "Content Creator"
-        },
-        {
-            name: "Jane",
-            title: "Designer"
-        }
-    ]; 
 
     return (
       <Router>
@@ -44,6 +33,7 @@ class App extends Component {
           <Route path="/" element={<ViewUsers users={this.state.users}/>} />
           <Route path='/create' element={<CreateUpdateUser/>}/>
           <Route path='/user/:userId' element={<ViewUser/>}/>
+          <Route path='/update-user/:userId' element={<UpdateUser/>}/>
         </Routes>
       </Router>
 
